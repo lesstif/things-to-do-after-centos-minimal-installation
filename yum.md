@@ -45,16 +45,35 @@ verbose=0
 # 국내 미러 사이트
 
 ## CD Networks
-* *baseurl=http://centos.mirror.cdnetworks.com/$releasever/os/$basearch/*
-* *baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch*
+
+```
+[base]
+baseurl=http://centos.mirror.cdnetworks.com/$releasever/os/$basearch/
+
+[updates]
+baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch
+```
 
 ## Kakao
-* *baseurl=http://mirror.kakao.com/centos/$releasever/os/$basearch/*
-* *baseurl=http://mirror.kakao.com/centos/$releasever/updates/$basearch*
 
-# Naver
-* *baseurl=http://mirror.navercorp.com/centos/$releasever/os/$basearch/*
-* *baseurl=http://mirror.navercorp.com/centos/$releasever/updates/$basearch/*
+```
+[base]
+baseurl=http://mirror.kakao.com/centos/$releasever/os/$basearch/
+
+[updates]
+baseurl=http://mirror.kakao.com/centos/$releasever/updates/$basearch
+```
+
+
+## Naver
+
+```
+[base]
+baseurl=http://mirror.navercorp.com/centos/$releasever/os/$basearch/
+
+[updates]
+baseurl=http://mirror.navercorp.com/centos/$releasever/updates/$basearch/
+```
 
 # 같이 보기
 

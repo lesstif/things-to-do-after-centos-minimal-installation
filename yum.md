@@ -1,4 +1,4 @@
-# yum repository 설정
+yum repository 설정
 
 # CentOS 국내 미러 사이트 변경
 
@@ -26,11 +26,27 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
 
+# fast mirror plugin 중지
+
+빠른 미러 사이트를 찾아주는 fast mirror plugin 중지
+
+```sh
+vi /etc/yum/pluginconf.d/fastestmirror.conf 
+```
+
+아래 내용중에 *enabled=1* 을 *enabled=0* 으로 변경
+
+```
+[main]
+enabled=0
+verbose=0
+```
+
 # 국내 미러 사이트
 
 ## CD Networks
 * *baseurl=http://centos.mirror.cdnetworks.com/$releasever/os/$basearch/*
-* baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch
+* *baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch*
 
 ## Kakao
 * *baseurl=http://mirror.kakao.com/centos/$releasever/os/$basearch/*
@@ -39,3 +55,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 # Naver
 * *baseurl=http://mirror.navercorp.com/centos/$releasever/os/$basearch/*
 * *baseurl=http://mirror.navercorp.com/centos/$releasever/updates/$basearch/*
+
+# 같이 보기
+
+*[CentOS yum 과 Ubuntu apt Mirror를 국내 사이트로 설정하기](https://www.lesstif.com/pages/viewpage.action?pageId=20776717)

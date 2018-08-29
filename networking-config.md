@@ -8,6 +8,7 @@
 vi /etc/sysconfig/network-scripts/ifcfg-*
 ```
 
+시스템의 network interface 설정 파일을 편집합니다.
 
 ```sh
 TYPE=Ethernet

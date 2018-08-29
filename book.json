@@ -1,0 +1,20 @@
+{
+    "title": "RHEL/CentOS 최소 설치후 할 일들",
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins": [
+        "toc",
+        "richquotes"
+    ],
+    "pluginsConfig": {
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        }
+    }
+}

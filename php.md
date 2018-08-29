@@ -9,7 +9,7 @@ yum -y install https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # PHP 설치
 
-**Info* Laravel 구동하는데 필요한 모듈 위주
+**Info** Laravel 구동하는데 필요한 모듈 위주
 
 ## PHP 7.1
 
@@ -111,7 +111,8 @@ sudo ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
 
 ### PHPUnit 5.7
 
-``sh
+
+```sh
 wget --no-check-certificate https://phar.phpunit.de/phpunit-5.7.27.phar
 chmod +x phpunit-5.7.*.phar
 sudo mv phpunit-5.7.*.phar /usr/local/bin/
@@ -119,6 +120,7 @@ sudo mv phpunit-5.7.*.phar /usr/local/bin/
 sudo ln -s /usr/local/bin/phpunit-5.7.*.phar /usr/local/bin/phpunit
 sudo ln -s /usr/local/bin/phpunit-5.7.*.phar /usr/local/bin/phpunit5
 ```
+
 ### PHPUnit 6.5
 
 ```sh

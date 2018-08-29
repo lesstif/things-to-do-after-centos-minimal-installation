@@ -77,4 +77,4 @@ baseurl=http://mirror.navercorp.com/centos/$releasever/updates/$basearch/
 
 # 같이 보기
 
-*[CentOS yum 과 Ubuntu apt Mirror를 국내 사이트로 설정하기](https://www.lesstif.com/pages/viewpage.action?pageId=20776717)
+* [CentOS yum 과 Ubuntu apt Mirror를 국내 사이트로 설정하기](https://www.lesstif.com/pages/viewpage.action?pageId=20776717)

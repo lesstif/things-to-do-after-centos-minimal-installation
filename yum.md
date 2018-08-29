@@ -1,2 +1,41 @@
-# yum repository 
+# yum repository 설정
 
+# CentOS 국내 미러 사이트 변경
+
+```sh
+vi /etc/yum.repos.d/CentOS-Base.repo 
+```
+
+***mirrorlist*** 를 주석처리하고 ***baseurl*** 에 국내 미러 사이트를 설정 
+
+```
+[base]
+name=CentOS-$releasever - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+baseurl=http://centos.mirror.cdnetworks.com/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[updates]
+name=CentOS-$releasever - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
+#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
+baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+```
+
+# 국내 미러 사이트
+
+## CD Networks
+* *baseurl=http://centos.mirror.cdnetworks.com/$releasever/os/$basearch/*
+* baseurl=http://centos.mirror.cdnetworks.com/$releasever/updates/$basearch
+
+## Kakao
+* *baseurl=http://mirror.kakao.com/centos/$releasever/os/$basearch/*
+* *baseurl=http://mirror.kakao.com/centos/$releasever/updates/$basearch*
+
+# Naver
+* *baseurl=http://mirror.navercorp.com/centos/$releasever/os/$basearch/*
+* *baseurl=http://mirror.navercorp.com/centos/$releasever/updates/$basearch/*

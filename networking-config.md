@@ -4,7 +4,6 @@
 
 ## Static IP 설정
 
-
 ```sh
 vi /etc/sysconfig/network-scripts/ifcfg-*
 ```

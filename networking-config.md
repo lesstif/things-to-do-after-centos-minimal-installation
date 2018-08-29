@@ -207,6 +207,16 @@ lesstif soft nofile 55536
 lesstif hard nofile 55536
 ```
 
+## 설정 확인
+
+```sh
+sysctl -p
+```
+
+```sh
+ulimit -a
+```
+
 # 같이 보기
 
 * [Linux Web Server Kernel Tuning](https://gist.github.com/kgriffs/4027835)

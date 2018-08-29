@@ -32,7 +32,27 @@ yum -y install php72w-cli php72w-common php72w-fpm  php72w-intl \
 ## php.ini 수정
 
 ```
+[PHP]
+max_execution_time = 60
+memory_limit = 1024M
+post_max_size = 128M
+upload_max_filesize = 128M
+max_file_uploads = 20
 
+[curl]
+; curl.cainfo = /etc/cacert.pem
+```
+
+**Info** curl 을 많이 사용할 경우 curl.cainfo 에 다운받은 CA 인증서 묶음(cacert.pem) 파일의 절대 경로를 설정
+
+```sh
+curl -k -L -O https://curl.haxx.se/ca/cacert.pem
+```
+
+### 설정 확인
+
+```sh
+php -r "phpinfo();"|grep -E "memory_limit|execution_time|post_max_size|upload_max_filesize"
 ```
 
 ## php-fpm 설정
@@ -81,3 +101,4 @@ systemctl restart php-fpm
 # 같이 보기
 
 * [RHEL/CentOS 5,6,7 에 EPEL 과 Remi/WebTatic Repository 설치하기](https://www.lesstif.com/pages/viewpage.action?pageId=6979743)
+* [curl 에 신뢰하는 인증기관 인증서 추가하기](https://www.lesstif.com/pages/viewpage.action?pageId=15892500)

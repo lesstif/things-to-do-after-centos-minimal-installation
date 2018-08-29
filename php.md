@@ -39,6 +39,9 @@ post_max_size = 128M
 upload_max_filesize = 128M
 max_file_uploads = 20
 
+[Date]
+date.timezone = Asia/Seoul
+
 [curl]
 ; curl.cainfo = /etc/cacert.pem
 ```
@@ -95,8 +98,56 @@ systemctl enable php-fpm
 systemctl restart php-fpm
 ```
 
+# PHP tool 설치
 
-# Composer install
+## Composer
+
+```sh
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin/
+sudo ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+```
+
+## PHPUnit
+
+### PHPUnit 5.7
+
+``sh
+wget --no-check-certificate https://phar.phpunit.de/phpunit-5.7.27.phar
+chmod +x phpunit-5.7.*.phar
+sudo mv phpunit-5.7.*.phar /usr/local/bin/
+ 
+sudo ln -s /usr/local/bin/phpunit-5.7.*.phar /usr/local/bin/phpunit
+sudo ln -s /usr/local/bin/phpunit-5.7.*.phar /usr/local/bin/phpunit5
+```
+### PHPUnit 6.5
+
+```sh
+wget --no-check-certificate https://phar.phpunit.de/phpunit-6.5.9.phar
+chmod +x phpunit-6.*.phar
+sudo mv phpunit-6.*.phar /usr/local/bin/
+ 
+sudo ln -s /usr/local/bin/phpunit-6.*.phar /usr/local/bin/phpunit6
+```
+
+# nginx 가상 호스트 추가 script
+
+## serve-php
+
+*설치:* 
+
+```sh
+curl -o serve-php.sh https://gist.githubusercontent.com/lesstif/82c107282241c7a52ad9/raw 
+sudo mv serve-php.sh /usr/local/bin/
+sudo chmod +x /usr/local/bin/serve-php.sh 
+```
+
+*사용:* 
+
+```sh
+serve-php.sh myhost.com /var/www/myhost.com
+```
+
+{% gist id="lesstif/82c107282241c7a52ad9" %}{% endgist %}
 
 # 같이 보기
 

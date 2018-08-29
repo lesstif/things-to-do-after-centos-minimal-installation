@@ -9,7 +9,8 @@
     },
     "plugins": [
         "toc",
-        "richquotes"
+        "richquotes",
+        "gist"
     ],
     "pluginsConfig": {
         "toc": {

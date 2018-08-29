@@ -1,2 +1,5 @@
-# things-to-do-after-centos-minimal-installation
-Things to do after RHEL/CentOS minimal installtion.
+# RHEL/CentOS 최소 설치후 할 일들
+RedHat Enterprise Linux(RHEL) , CentOS 최소 설치후 할 일들
+
+
+

@@ -29,7 +29,7 @@ yum -y install  system-config-firewall-tui
 # git & etc
 
 ```sh
-yum -y install vim git zsh bash-completion
+yum -y install vim git zsh bash-completion unzip bzip2 xz
 ```
 
 # SELinux utility

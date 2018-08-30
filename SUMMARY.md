@@ -10,4 +10,4 @@
 * [Let's Encrypt SSL 인증서 설치](letsencrypts.md)
 * [PHP 서비스 환경 구성](php.md)
 * [Python 서비스 환경 구성](python.md)
-* [MySQL/Maria DB 설치](mysql.md)
+* [DBMS / Redis 설치](mysql.md)

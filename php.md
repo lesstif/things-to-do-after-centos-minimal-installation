@@ -43,13 +43,13 @@ max_file_uploads = 20
 date.timezone = Asia/Seoul
 
 [curl]
-; curl.cainfo = /etc/cacert.pem
+; curl.cainfo =  /etc/ssl/certs/cacert.pem
 ```
 
 **Info** curl 을 많이 사용할 경우 curl.cainfo 에 다운받은 CA 인증서 묶음(cacert.pem) 파일의 절대 경로를 설정
 
 ```sh
-curl -k -L -O https://curl.haxx.se/ca/cacert.pem
+curl -k -L -O https://curl.haxx.se/ca/cacert.pem && mv cacert.pem /etc/ssl/certs
 ```
 
 ### 설정 확인

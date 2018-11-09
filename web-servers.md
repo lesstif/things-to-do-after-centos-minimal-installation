@@ -38,8 +38,7 @@ systemctl restart nginx
 
 ## 가상 호스트 설정
 
-우분투는 가상 호스트 설정은 sites-available 디렉터리에 가상 호스트별 설정 파일(lesstif.com 처럼 호스트 이름으로 하는게 제일 깔끔한 것 같다)을 위치시키고
-활성화할 가상 호스트는 sites-enabled/ 디렉터리에 위치하도록 하고 있다. 
+우분투는 가상 호스트 설정은 sites-available 디렉터리에 가상 호스트별 설정 파일(lesstif.com 처럼 호스트 이름으로 하는게 제일 깔끔한 것 같다)을 위치시키고 활성화할 가상 호스트는 sites-enabled/ 디렉터리에 위치하도록 하고 있다. 
 
 sites-enabled/ 에 있는 가상 호스트 설정은 실제로는  sites-available 에 있는 파일에 대한 심볼릭 링크이다.
 
@@ -47,16 +46,27 @@ sites-enabled/ 에 있는 가상 호스트 설정은 실제로는  sites-availab
 include /etc/nginx/sites-enabled/*;
 ```
 
-가상 호스트 설정을 도와주는 utility(https://gist.github.com/lesstif/82c107282241c7a52ad9)
+가상 호스트 설정을 도와주는 [serve utility script](https://gist.github.com/lesstif/82c107282241c7a52ad9) 다운로드
 
+PHP 용
 ```sh
-curl -o serve-php.sh https://gist.githubusercontent.com/lesstif/82c107282241c7a52ad9/raw && sudo mv serve-php.sh /usr/local/bin/ && sudo chmod +x /usr/local/bin/serve-php.sh
+curl -L -o serve-php.sh https://gist.githubusercontent.com/lesstif/82c107282241c7a52ad9/raw && sudo mv serve-php.sh /usr/local/bin/ && sudo chmod +x /usr/local/bin/serve-php.sh
 ```
 
-실행은 다음처럼 도메인명과 webroot 경로를 주면 됨
+Java(tomcat) 용
+```sh
+curl -L -o serve-tomcat.sh https://gist.github.com/lesstif/4d162c4c8df756a65286/raw && sudo mv serve-tomcat.sh /usr/local/bin/ && sudo chmod +x /usr/local/bin/serve-tomcat.sh
+```
+
+PHP-FPM 용 실행은 다음처럼 도메인명과 webroot 경로를 주면 됨
 
 ```sh
 sudo serve-php.sh my-new-site /var/www/html/my-new-site-webroot
+```
+
+tomcat 용 실행은 다음처럼 도메인명과 port 넘버(tomcat 이 listen 하는 Http connectorport)를 주면 됨
+```sh
+sudo serve-tomcat.sh my-new-site 8080
 ```
 
 # 같이 보기

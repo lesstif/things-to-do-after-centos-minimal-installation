@@ -21,7 +21,7 @@ systemctl restart redis
 1. MySQL 설치
 
  ```sh
-  yum install mysql-community
+  yum install mysql-community-server
   ```
 
 1. systemctl

@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Network 설정](networking-config.md)
+* [System 과 Network 설정](networking-config.md)
 * [yum repository 설정](yum.md)
 * [SSH 서버 설정](sshd.md)
 * [주요 패키지 설치](core-package.md)
